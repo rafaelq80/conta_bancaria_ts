@@ -91,7 +91,7 @@ async function main() {
 
         switch (opcao) {
             case 1:
-                console.log(colors.fg.whitestrong, "Criar Conta\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nCriar Conta\n\n", colors.reset);
 
                 agencia = parseInt(leia("Digite o Número da agência: "));
 
@@ -119,19 +119,22 @@ async function main() {
                 keyPress();
                 break;
             case 2:
-                console.log(colors.fg.whitestrong, "Listar todas as Contas\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nListar todas as Contas\n\n", colors.reset);
 
                 contas.listarTodas();
 
                 keyPress();
                 break;
             case 3:
-                console.log(colors.fg.whitestrong, "Consultar dados da Conta - por número\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nConsultar dados da Conta - por número\n\n", colors.reset);
+
+                numero = parseInt(leia("Digite o número da Conta: "));
+                contas.procurarPorNumero(numero);
 
                 keyPress();
                 break;
             case 4:
-                console.log(colors.fg.whitestrong, "Atualizar dados da Conta\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nAtualizar dados da Conta\n\n", colors.reset);
 
                 numero = parseInt(leia("Digite o número da Conta: "));
 
@@ -161,7 +164,7 @@ async function main() {
                 keyPress();
                 break;
             case 5:
-                console.log(colors.fg.whitestrong, "Apagar a Conta\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nApagar uma Conta\n\n", colors.reset);
 
                 numero = parseInt(leia("Digite o número da Conta: "));
                 contas.deletar(numero);
@@ -169,7 +172,7 @@ async function main() {
                 keyPress();
                 break;
             case 6:
-                console.log(colors.fg.whitestrong, "Saque\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nSaque\n\n", colors.reset);
 
                 numero = parseInt(leia("Digite o número da Conta: "));
                 valor = parseFloat(leia("Digite o valor do saque: "));
@@ -179,7 +182,7 @@ async function main() {
                 keyPress();
                 break;
             case 7:
-                console.log(colors.fg.whitestrong, "Depósito\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nDepósito\n\n", colors.reset);
 
                 numero = parseInt(leia("Digite o número da Conta: "));
                 valor = parseFloat(leia("Digite o valor do depósito: "));
@@ -189,7 +192,7 @@ async function main() {
                 keyPress();
                 break;
             case 8:
-                console.log(colors.fg.whitestrong, "Transferência entre Contas\n\n", colors.reset);
+                console.log(colors.fg.whitestrong, "\n\nTransferência entre Contas\n\n", colors.reset);
 
                 numero = parseInt(leia("Digite o número da Conta de Origem: "));
                 numeroDestino = parseInt(leia("Digite o número da Conta de Destino: "));
@@ -209,11 +212,11 @@ async function main() {
 }
 
 function sobre(): void {
-    console.log("\n*********************************************************");
+    console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: ");
     console.log("Rafael Queiróz - rafaelproinfo@gmail.com");
     console.log("github.com/rafaelq80");
-    console.log("*********************************************************");
+    console.log("*****************************************************");
 }
 
 function keyPress(): void {

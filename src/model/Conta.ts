@@ -84,9 +84,9 @@ export abstract class Conta {
                 break;
         }
 
-        console.log("\n\n*********************************************************************");
+        console.log("\n\n*****************************************************");
         console.log("Dados da Conta:");
-        console.log("*********************************************************************");
+        console.log("*****************************************************");
         console.log("Numero da Conta: " + this._numero);
         console.log("Agência: " + this._agencia);
         console.log("Tipo da Conta: " + tipo);
