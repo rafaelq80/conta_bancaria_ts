@@ -65,8 +65,9 @@ ContaPoupanca --> Conta
 ## Executar o projeto
 
 1. Abra o Terminal
-2. Digite o comando: `tsc --init` na pasta raíz do projeto
-3. Para executar o projeto, utilize o comando `ts-node Menu.ts`
+2. Digite o comando: `npm install` na pasta raíz do projeto para instalar as Bibliotecas.
+3. Digite o comando: `tsc --init` para inicializar o Typescript.
+4. Digite o comando `ts-node Menu.ts` para executar o projeto.
 
 <br /><br />
 
