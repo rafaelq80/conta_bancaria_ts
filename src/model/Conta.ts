@@ -2,6 +2,8 @@
 
 export abstract class Conta {
 
+    /* o _ indica que o Atributo só pode ser alterado
+       ou recuperado através dos Métodos Get e Set */
     private _numero: number;
     private _agencia: number;
     private _tipo: number;

@@ -6,18 +6,23 @@ import { ContaCorrente } from "./src/model/ContaCorrente";
 import { ContaPoupanca } from "./src/model/ContaPoupanca";
 import { ContaController } from "./src/controller/ContaController";
 
+/* Inicialização da Biblioteca de Leitura de Strings via teclado */
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
 });
 
+/* Converte a função question em uma Promisse.
+   Como readline é uma API assíncrona, fica muito mais
+   simples lidar com uma Promisse do que com uma Callback*/
 const question = util.promisify(rl.question).bind(rl);
 
 async function main() {
 
-    let contas: ContaController = new ContaController();
-
+    /* Inicialização da Biblioteca de Leitura de Numeros via teclado */
     const leia = promptSync();
+
+    let contas: ContaController = new ContaController();
 
     let opcao, numero, agencia, tipo, saldo, limite, aniversario, valor, numeroDestino: number;
     let titular: string;
@@ -44,6 +49,7 @@ async function main() {
     // contapoupanca.depositar(1000);
     // contapoupanca.visualizar();
 
+    /* Dados iniciais */
     let cc1: ContaCorrente = new ContaCorrente(contas.gerarNumero(), 123, 1, "João da Silva", 1000, 100.0);
     contas.cadastrar(cc1);
 
@@ -211,6 +217,7 @@ async function main() {
 
 }
 
+/* Função com os dados da pessoa desenvolvedora */
 function sobre(): void {
     console.log("\n*****************************************************");
     console.log("Projeto Desenvolvido por: ");
@@ -219,12 +226,14 @@ function sobre(): void {
     console.log("*****************************************************");
 }
 
+/* Função que aguarda pela tecla enter */
 function keyPress(): void {
     const leia = promptSync();
     console.log(colors.reset, "");
     leia("\nPressione enter para continuar...");
 }
 
+/* Função Assícrona de leitura de Strings*/
 async function questao(pergunta: string): Promise<any> {
     try {
         const answer = await question(pergunta);
